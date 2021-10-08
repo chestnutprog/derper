@@ -1,5 +1,6 @@
 FROM golang:1.17-alpine AS build
-RUN go install tailscale.com/cmd/derper@main
+RUN apk --update add build-base && \
+    go install tailscale.com/cmd/derper@main
 
 FROM alpine:3.14
 WORKDIR /
