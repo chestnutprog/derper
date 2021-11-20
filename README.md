@@ -5,5 +5,5 @@ Pre-built Docker Image of [tailscale derper](https://github.com/tailscale/tailsc
 ## Usgae 
 
 ```sh
-docker run -p 443:443 -p 3478:3478/udp -d -t chestnutprog/derper -hostname example.net -stun
+docker run -p 443:443 -p 3478:3478/udp -d -t arbal/derper -hostname example.net -stun
 ```
