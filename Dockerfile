@@ -1,8 +1,8 @@
-FROM golang:1.20-alpine AS build
+FROM golang:1.21-alpine AS build
 RUN apk --update add build-base && \
-	go install tailscale.com/cmd/derper@main
+	go install tailscale.com/cmd/derper@v1.48.0
 
-FROM alpine:3.17
+FROM alpine:3.18
 RUN apk add --no-cache curl
 WORKDIR /
 COPY --from=build /go/bin/derper /derper
